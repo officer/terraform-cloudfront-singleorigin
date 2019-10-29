@@ -24,6 +24,11 @@ variable "certificate_arn" {
   type = "string"
 }
 
+variable "forward_headers" {
+  description   = "(Optional) Headers to be forwarded"
+  type          = "list"
+  default       = []
+}
 variable "tags" {
   description = "(Optional) Tags for resource"
   type        = "map"

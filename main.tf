@@ -36,7 +36,7 @@ resource "aws_cloudfront_distribution" "distribution" {
       max_ttl                = 86400
       forwarded_values {
         query_string = false
-
+        headers      = "${var.forward_headers}"
         cookies {
           forward = "none"
         }
