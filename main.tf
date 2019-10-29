@@ -55,7 +55,7 @@ resource "aws_cloudfront_distribution" "distribution" {
 # logging bucket
 module "logging_bucket" {
   source    = "github.com/officer/terraform-logging-bucket.git"
-  region    = "${var.s3_region}"
+  region    = "${data.aws_region.current.name}"
   namespace = "cflog"
   tags      = "${var.tags}"
 }
