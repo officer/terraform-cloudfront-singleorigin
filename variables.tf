@@ -1,6 +1,6 @@
 variable "cloudfront_domain_name" {
   description   = "(Required) cloudfront domain names users are supposed to hit"
-  type          = "list"
+  type          = "string"
 }
 
 variable "alias_domain_names" {
