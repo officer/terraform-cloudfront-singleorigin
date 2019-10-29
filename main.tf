@@ -56,6 +56,18 @@ resource "aws_cloudfront_distribution" "distribution" {
 
 }
 
+# A Record
+resource "aws_route53_record" "record" {
+  zone_id = "${var.zone_id}"
+  name    = "${var.cloudfront_domain_name}"
+  type    = "A"
+  alias {
+    name                    = "${aws_cloudfront_distribution.distribution.domain_name}"
+    zone_id                 = "${aws_cloudfront_distribution.distribution.hosted_zone_id}"
+    evaluate_target_health  = true
+  }
+}
+
 # logging bucket
 module "logging_bucket" {
   source    = "github.com/officer/terraform-logging-bucket.git"
