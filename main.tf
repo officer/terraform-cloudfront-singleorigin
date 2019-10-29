@@ -13,7 +13,7 @@ resource "aws_cloudfront_distribution" "distribution" {
       domain_name = "${var.origin_domain_name}"
       origin_id   = "primary"
 
-      custom_origin_config = {
+      custom_origin_config {
         http_port = 80
         https_port = 443
         origin_protocol_policy = "http-only"
