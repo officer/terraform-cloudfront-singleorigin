@@ -1,7 +1,3 @@
-variable "origin" {
-  description   = "(Required) origin config"
-  type          = "map"
-}
 
 variable "alias_domain_names" {
   description   = "(Required) alias domain names"
